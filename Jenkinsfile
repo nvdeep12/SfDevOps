@@ -57,6 +57,7 @@ node {
               
               println rc
               
+              sh returnStdout: true, script: "${toolbelt} force:mdapi:convert -d manifest/ -u ${HUB_ORG}"
               // need to pull out assigned username
               if(isUnix()) {
                 rmsg = sh returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d manifest/ -u ${HUB_ORG}"
